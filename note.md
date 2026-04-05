@@ -1,5 +1,6 @@
 ## Check if rl model is work
-C:\Users\Admin\TmrlData in https://github.com/trackmania-rl/tmrl 
+Runtime data/config folder: C:\Users\Admin\TmrlData 
+Command line Interface: D:\Internship-AutoDrivingCar\tmrl\docs\source\cli.rst
 
 # Install the tmrl-test map (first run)
 Copy:
@@ -19,7 +20,7 @@ In Trackmania:
 
 # Run a pre-trained agent 
 
-In terminal: python -m tmrl --test
+In terminal: python -m tmrl --test      
     -> confirm: screenshots + telemetry + virtual gamepad control are all working.
 NOTE: your lap will become LAGGY and FAN is LOUDING
 
@@ -32,6 +33,14 @@ Open 3 terminals:
     python -m tmrl --serverpython -m tmrl --check-environment
     python -m tmrl --trainer
     python -m tmrl --worker
+Baseline: (TM20IMAGES)
+    python -m tmrl --server
+    python -m tmrl --worker --seed 0 --run-name baseline_seed0
+    python -m tmrl --trainer --seed 0 --run-name baseline_seed0
+Baseline: (TM20LIDAR)
+    python -m tmrl --server
+    python -m tmrl --worker --seed 0 --run-name SAC_lidar_v1_seed0
+    python -m tmrl --trainer --seed 0 --run-name SAC_lidar_v1_seed0
 
 Troubleshooting (the 2 most common blockers)
     No connection / nothing happens when you run --test
